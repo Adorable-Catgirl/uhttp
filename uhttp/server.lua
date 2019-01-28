@@ -4,20 +4,20 @@
 local server = {}
 
 local lanes = require("lanes").configure()
-local ssl = require("ssl")
+--local ssl = require("ssl")
 local thread = require("thread")
-local client = require("client")
-local websocket = require("websocket")
+--local client = require("client")
+--local websocket = require("websocket")
 local socket = require("socket-lanes")
-local wsthread = loadfile("websocket_thread.lua")
-local codes = require("codes")
+--local wsthread = loadfile("websocket_thread.lua")
+--local codes = require("codes")
 local handthread = assert(loadfile("handler_thread.lua"))
 local rand = io.open("/dev/urandom", "rb")
 local function gen_uuid()
 	return string.format(string.rep("%.2x", 16), rand:read(16):byte(1, 16))
 end
 
-local version = "1.1"
+local version = "0.1"
 
 --- Handles an HTTP request path.
 -- @tparam string method the HTTP method.
